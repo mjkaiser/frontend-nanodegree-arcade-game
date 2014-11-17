@@ -24,12 +24,52 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+var Player = function() {
+    this.sprite = 'images/char-boy.png';
+    this.x = 200;
+    this.y = 400;
+}
 
+Player.prototype.update = function(dt) {
+    if(this.x < 0)
+        this.x = 0;
+    if(this.x > 400)
+        this.x = 400;
+    if(this.y < 0)
+        this.y = 0;
+    else if(this.y > 400)
+        this.y = 400;
+
+}
+
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+}
+
+Player.prototype.handleInput = function(key) {
+    if(key === 'up')
+    {
+        this.y -= 100;
+    }
+    if(key === 'down')
+    {
+        this.y += 100;
+    }
+    if(key === 'left')
+    {
+        this.x -= 100;
+    }
+    if(key === 'right')
+    {
+        this.x += 100;
+    }
+}
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-
+var allEnemies = [];
+var player = new Player();
 
 
 // This listens for key presses and sends the keys to your
