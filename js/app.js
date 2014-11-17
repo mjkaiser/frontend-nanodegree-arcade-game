@@ -31,14 +31,14 @@ var Player = function() {
 }
 
 Player.prototype.update = function(dt) {
-    if(this.x < 0)
-        this.x = 0;
-    if(this.x > 400)
-        this.x = 400;
-    if(this.y < 0)
-        this.y = 0;
-    else if(this.y > 400)
-        this.y = 400;
+    // if(this.x < 0)
+    //     this.x = 0;
+    // if(this.x > 400)
+    //     this.x = 400;
+    // if(this.y < 0)
+    //     this.y = 0;
+    // else if(this.y > 400)
+    //     this.y = 400;
 
 }
 
@@ -49,19 +49,19 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(key) {
     if(key === 'up')
     {
-        this.y -= 100;
+        this.y -= 83;
     }
     if(key === 'down')
     {
-        this.y += 100;
+        this.y += 83;
     }
     if(key === 'left')
     {
-        this.x -= 100;
+        this.x -= 101;
     }
     if(key === 'right')
     {
-        this.x += 100;
+        this.x += 101;
     }
 }
 
